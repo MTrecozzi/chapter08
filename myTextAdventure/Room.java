@@ -14,11 +14,15 @@
  */
 public class Room 
 {
-    public String description;
-    public Room northExit;
-    public Room southExit;
-    public Room eastExit;
-    public Room westExit;
+    // made private for proper encapsulation
+    // the class responsible for the data, should be responsible for providing and changing that data.
+    private String description;
+    private Room northExit;
+    private Room southExit;
+    private Room eastExit;
+    private Room westExit;
+    private Room upExit;
+    private Room downExit;
 
     /**
      * Create a room described "description". Initially, it has
@@ -29,6 +33,29 @@ public class Room
     public Room(String description) 
     {
         this.description = description;
+    }
+    
+    public Room getExit(String direction) {
+        
+        // replace this with hashMap searching.
+        if (direction.equals("north"))
+            return northExit;
+        if (direction.equals("south"))
+            return southExit;
+        if (direction.equals("west"))
+            return westExit;
+        if (direction.equals("east"))
+            return eastExit;
+        if (direction.equals("up"))
+            return upExit;
+        if (direction.equals("down"))
+            return downExit;
+            
+            // concretetizing your ductTape.
+        
+            
+        
+        return null;
     }
 
     /**
@@ -53,6 +80,27 @@ public class Room
         if(west != null) {
             westExit = west;
         }
+    }
+    
+    public void printExits() {
+        
+        if(northExit != null) {
+            System.out.println("north ");
+        }
+        
+        if(southExit != null) {
+            System.out.println("south ");
+        }
+        
+        if(westExit != null) {
+            System.out.println("west");
+        }
+        
+        if(eastExit != null) {
+            System.out.println("east");
+        }
+        
+        
     }
 
     /**
