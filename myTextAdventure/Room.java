@@ -84,23 +84,27 @@ public class Room
     
     public void printExits() {
         
+        // Replace with ArrayList!      
+        System.out.print("Exits: ");
+        
         if(northExit != null) {
-            System.out.println("north ");
+            System.out.print("north ");
         }
         
         if(southExit != null) {
-            System.out.println("south ");
+            System.out.print("south ");
         }
         
         if(westExit != null) {
-            System.out.println("west");
+            System.out.print("west");
         }
         
         if(eastExit != null) {
-            System.out.println("east");
+            System.out.print("east");
         }
         
-        
+        System.out.println("");
+      
     }
 
     /**

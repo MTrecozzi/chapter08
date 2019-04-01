@@ -98,6 +98,8 @@ public class Game
      */
     private boolean processCommand(Command command) 
     {
+        // Implicit Coupling
+        // A better way to turn commands into operations.
         boolean wantToQuit = false;
 
         if(command.isUnknown()) {
