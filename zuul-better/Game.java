@@ -109,6 +109,7 @@ public class Game
 
         String commandWord = command.getCommandWord();
         if (commandWord.equals("help")) {
+            // call different methods based on the command recognition
             printHelp();
         }
         else if (commandWord.equals("go")) {
@@ -116,6 +117,8 @@ public class Game
         }
         else if (commandWord.equals("quit")) {
             wantToQuit = quit(command);
+        } else if (commandWord.equals("look")) {
+            currentRoom.getLongDescription();
         }
         // else command not recognised.
         return wantToQuit;
