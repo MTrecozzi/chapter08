@@ -24,6 +24,9 @@ public class Game
     
     // to be offload to level class
     private HashMap<Integer, String> rooms = new HashMap<>();
+    
+    // Change to singlton system, refrence old canvas project
+    private Player player = new Player();
         
     /**
      * Create the game and initialise its internal map.
@@ -43,7 +46,7 @@ public class Game
     {
         
         // Room Creation
-        Room outside, theater, pub, lab, office;
+        Room outside, theater, pub, lab, office, startingRoom;
       
         // create the rooms
         outside = new Room("outside the main entrance of the university");
@@ -65,8 +68,11 @@ public class Game
         lab.setExit("east", office);
 
         office.setExit("west", lab);
+        
+        //Generated Room
+        startingRoom = Generator.getStartingRoom();
 
-        currentRoom = outside;  // start game outside
+        currentRoom = startingRoom;  // start game outside
     }
 
     /**

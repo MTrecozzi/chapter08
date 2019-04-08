@@ -20,8 +20,7 @@ public class Room
 {
     private String description;
     private HashMap<String, Room> exits;        // stores exits of this room.
-    private int xPos;
-    private int yPos;
+    private Coords coordinates;
 
     /**
      * Create a room described "description". Initially, it has
@@ -35,17 +34,16 @@ public class Room
         exits = new HashMap<>();
     }
     
+    public Room() {
+     exits = new HashMap<>();   
+    }
+    
     public void setCoordinates(int x, int y) {
-        this.xPos = x;
-        this.yPos = y;
+        coordinates.setPosition(x, y);
     }
     
-    public int getXPos() {
-        return this.xPos;
-    }
-    
-    public int getYPos() {
-        return this.yPos;
+    public Coords getCoordinates() {    
+     return this.coordinates;   
     }
 
     /**
@@ -56,6 +54,10 @@ public class Room
     public void setExit(String direction, Room neighbor) 
     {
         exits.put(direction, neighbor);
+    }
+    
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /**
