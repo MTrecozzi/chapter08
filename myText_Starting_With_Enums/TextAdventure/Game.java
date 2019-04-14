@@ -38,6 +38,13 @@ public class Game
         
         // RandomizeMap();
     }
+    
+    public static void main (String[] args) {
+        
+        Game gameObject = new Game();
+        gameObject.play();
+        
+    }
 
     /**
      * Create all the rooms and link their exits together.
